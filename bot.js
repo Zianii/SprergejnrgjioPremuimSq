@@ -123,48 +123,6 @@ msg.delete();
 
 
 
-client.on("message", msg => {//By DEL.25♥♥#1406 || هاشم || Alpha Codes || All copyrights for me & Alpha Codes.
-var prefix = 'S+';// البرفكس
-var m = msg.guild.name
-var d = msg.guild.memberCount
-var p = msg.guild.roles.size
-var c = msg.guild.channels.size
-var l = msg.guild.region
-var o = msg.guild.iconURL
-var k = msg.guild.owner
-var i = msg.guild.emojis.size
-var b = msg.guild.members.filter(m => m.user.bot).size
-var h = d - b
-var cre = `${moment(msg.guild.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(msg.guild.createdAt).fromNow()}\``
-var t = msg.guild.channels.filter(e => e.type === "text")
-var v = msg.guild.channels.filter(e => e.type === "voice")
-var pow = msg.guild.verificationLevel
-var e = msg.guild.emojis.size
-var e2 = msg.guild.emojis.array()
-var afk = msg.guild.afkChannel
-var ID = msg.guild.id
-if (msg.content.startsWith(prefix + "server")){
-var embed = new Discord.RichEmbed()
-.setColor("RANDOM")
-.setThumbnail(o)
-.addField("👑**ريْس السيرفر**👑⤵", k, true)
-.addField("📜**اسم السيرفر**📜⤵", m, true)
-.addField("🆔**ايدي السيرفر**🆔⤵", ID, true)
-.addField("👥**كل الاعضاء**🤖⤵", d, true)
-.addField("📕**الرتب**📕⤵", p, true)
-.addField("📕**القنوات**📕⤵", c, true)
-.addField("🌐**نوع السيرفر**🌐⤵", l, true)
-.addField("🤖**البوتات**🤖⤵", b, true)
-.addField("👥**الاشخاص**👥⤵", h, true)
-.addField("📝**الرومات الكتابيه**📝⤵", `${t.size}`, true)
-.addField("🔒**مستوى حماية السيرفر**🔒⤵", pow, true)
-.addField("🎤**الرومات الصوية**🎤⤵", `${v.size}`, true)
-.addField("📆**تم انشاء السيرفر في**📆⤵", cre,true)
-.addField("🛏غرفت النوم🛏⤵", afk, true)
-msg.channel.sendEmbed(embed);
-}
-});
-
 
 
 
@@ -186,7 +144,19 @@ s.send(args).catch(e => i--);
 });
 
 
+var antispam = require("anti-spam");//npm i anti-spam
 
+antispam(client, {
+  warnBuffer: 3, //الحد الأقصى المسموح به من الرسائل لإرسالها في الفاصل الزمني قبل الحصول على تحذير.
+  maxBuffer: 5, // الحد الأقصى المسموح به من الرسائل لإرسالها في الفاصل الزمني قبل الحصول على ميوت.
+  interval: 1000, // مقدار الوقت قبل حصول باند
+  warningMessage: "stop spamming.", // رسالة تحذير اذا سوا سبام!
+  roleMessage: "Muted!!", // الرسالة الي تجي اذا شخص اخذ ميوت
+  roleName: "Muted", // اسم رتبة الميوت
+  maxDuplicatesWarning: 7, // عدد الرسايل الي قبل التحذيرات
+  maxDuplicatesBan: 10, // عدد الرسايل الي يقدر المستخدم يرسلها قبل الميوت
+  time: 10, // عدد الوقت الي يجلس لين تسحب رتبة الميوت من الشخص الحسبة برمجية وليست كتابية
+});
 
 
 
