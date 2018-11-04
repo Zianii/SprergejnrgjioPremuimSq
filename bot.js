@@ -29,11 +29,6 @@ client.on('ready', () => {
 });
 
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag} !`);
-          client.user.setActivity("SOON",{type: 'WATCHING'});
-  
-  });
 
 
 
@@ -67,7 +62,7 @@ client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
-if (message.content.startsWith(adminprefix + 'setgame')) {
+if (message.content.startsWith(adminprefix + 'setw')) {
  client.user.setActivity("argresult",{type: 'WATCHING'});
     message.channel.sendMessage(`**${argresult} تم تغيير واتشينق البوت إلى **`)
 } else 
