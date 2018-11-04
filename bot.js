@@ -53,30 +53,10 @@ client.user.setAvatar(argresult);
 if (message.content.startsWith(adminprefix + 'setT')) {
   client.user.setGame(argresult, "https://www.twitch.tv/squad");
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
-}
-});
 
-const adminprefix = "S+";
-const devs = ['283580465862934539','283580465862934539'];
-client.on('message', message => {
-  var argresult = message.content.split(` `).slice(1).join(' ');
-    if (!devs.includes(message.author.id)) return;
-    
 if (message.content.startsWith(adminprefix + 'setw')) {
  client.user.setActivity("argresult",{type: 'WATCHING'});
     message.channel.sendMessage(`**${argresult} تم تغيير واتشينق البوت إلى **`)
-} else 
-  if (message.content.startsWith(adminprefix + 'setnsdfsdfsdfame')) {
-client.user.setUsername(argresult).then
-    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
-} else
-  if (message.content.startsWith(adminprefix + 'setavsdfdsfdsfdsfdsfatar')) {
-client.user.setAvatar(argresult);
-  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
-      } else     
-if (message.content.startsWith(adminprefix + 'sesdfsdfsdfdsftT')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/leaders");
-    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
 });
 
