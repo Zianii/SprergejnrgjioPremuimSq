@@ -756,8 +756,6 @@ gg.send({embed : new Discord.RichEmbed()
 
 
 
-
-
 client.on('message', message => {
             if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
@@ -821,7 +819,6 @@ client.on('message', message => {
 	
 	
 	
-	
 	client.on('message', message => {
               if (!message.channel.guild) return;
       if(message.content === 'Scount')
@@ -833,8 +830,6 @@ client.on('message', message => {
       .addField('عدد اعضاء السيرفر',`${message.guild.memberCount}`)
       message.channel.send(SaifDz);
     });
-	
-	
 	
 	
 
@@ -939,7 +934,6 @@ if (message.content.startsWith('S+صراحة')) {
 
 
 
-
 client.on('message',message =>{
     var prefix = "S+";
     if(message.content.startsWith(prefix + 'top')) {
@@ -989,7 +983,6 @@ client.on('message',message =>{
       }
     }); 
 	
-
   
   
   client.on('message', message =>{
@@ -1313,7 +1306,6 @@ client.on('message', msg => {
 
  
  
- 
  client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "help") {
@@ -1451,15 +1443,6 @@ client.on('message', message => {
          }
  }); 
  
- 
-
-
-
-	  
-	  
-
-
-
 
 
 
@@ -1554,10 +1537,6 @@ client.on('guildMemberAdd', member => {
             }
            
           });
-
-
-
-
 
 
 	
