@@ -57,14 +57,6 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 });
 
 
-client.on("ready", () => {
-    setInterval(function(){
-        client.guilds.get("502896705386315777").roles.find("name", "rainbow").edit({
-            color : "RANDOM"
-        });
-    }, 10)
-});
-
 
 
 
